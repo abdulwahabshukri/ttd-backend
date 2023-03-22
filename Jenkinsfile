@@ -24,7 +24,7 @@ pipeline {
                 sh '''
                 docker stop ttd-backend || true
                 docker rm -f ttd-backend || true
-                docker run -p5000:3000 -v /home/deploy/data.csv:/app/data.csv -d --name ttd-backend christianheimke/ttd-backend:jenkins-${GITHUB_RUN_ID}
+                docker run -p5000:3000 -v /home/deploy/data.csv:/app/data.csv -d --name ttd-backend abdulwahabshukri/ttd-backend:jenkins-${GITHUB_RUN_ID}
                 '''
             }
         }
